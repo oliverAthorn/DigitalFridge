@@ -1,9 +1,10 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 using Dapper;
+using DigitalFridge.Repository;
 using DigitalFridge.Repository.Models;
 
-public class RecipeRepository
+public class RecipeRepository : IRecipeRepository
 {
     private readonly string _connectionString;
 

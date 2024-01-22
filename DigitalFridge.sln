@@ -7,6 +7,10 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DigitalFridge.Database", "D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalFridge.Repository", "DigitalFridge.Repository\DigitalFridge.Repository.csproj", "{9FBF3E3F-3BBB-4FC9-A08F-C2B3CCF10056}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalFridge.Service", "DigitalFridge.Service\DigitalFridge.Service.csproj", "{28B94F02-615D-4DA9-94A2-D3B9B75C7C1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalFridge.Web", "DigitalFridge.Web\DigitalFridge.Web.csproj", "{B9EB0320-C644-40D2-97C8-7FB4428BAF03}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +27,14 @@ Global
 		{9FBF3E3F-3BBB-4FC9-A08F-C2B3CCF10056}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FBF3E3F-3BBB-4FC9-A08F-C2B3CCF10056}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FBF3E3F-3BBB-4FC9-A08F-C2B3CCF10056}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28B94F02-615D-4DA9-94A2-D3B9B75C7C1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28B94F02-615D-4DA9-94A2-D3B9B75C7C1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28B94F02-615D-4DA9-94A2-D3B9B75C7C1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28B94F02-615D-4DA9-94A2-D3B9B75C7C1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9EB0320-C644-40D2-97C8-7FB4428BAF03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9EB0320-C644-40D2-97C8-7FB4428BAF03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9EB0320-C644-40D2-97C8-7FB4428BAF03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9EB0320-C644-40D2-97C8-7FB4428BAF03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
