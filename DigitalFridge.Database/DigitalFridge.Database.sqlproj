@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{60616059-cc48-416f-ae46-e81416bb7218}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql150DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -56,5 +56,16 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="Tables" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\Users.sql" />
+    <Build Include="Tables\Recipes.sql" />
+    <Build Include="Tables\Ingredients.sql" />
+    <Build Include="Tables\RecipeIngredients.sql" />
+    <Build Include="Tables\Instructions.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DigitalFridge.Database.publish.xml" />
   </ItemGroup>
 </Project>

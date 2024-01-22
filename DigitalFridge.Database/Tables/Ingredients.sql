@@ -1,0 +1,4 @@
+﻿CREATE TABLE Ingredients (
+    IngredientID INT IDENTITY(1,1) PRIMARY KEY,
+    Name NVARCHAR(255) NOT NULL
+);
