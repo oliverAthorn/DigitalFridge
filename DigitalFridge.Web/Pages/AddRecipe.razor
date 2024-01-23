@@ -7,41 +7,41 @@
 
 <h3>Add New Recipe</h3>
 
-<EditForm Model="@newRecipe" OnValidSubmit="HandleValidSubmit">
+<EditForm Model="@newRecipe" OnValidSubmit="HandleValidSubmit" class="recipe-form">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
-    <div>
+    <div class="form-group">
         <label for="title">Title: </label>
-        <InputText id="title" @bind-Value="newRecipe.Title" />
+        <InputText id="title" @bind-Value="newRecipe.Title" class="form-control" />
     </div>
 
-    <div>
+    <div class="form-group">
         <label for="description">Description: </label>
-        <InputTextArea id="description" @bind-Value="newRecipe.Description" />
+        <InputTextArea id="description" @bind-Value="newRecipe.Description" class="form-control" />
     </div>
 
-    <div>
+    <div class="form-group">
         <label for="category">Category: </label>
-        <InputText id="category" @bind-Value="newRecipe.Category" />
+        <InputText id="category" @bind-Value="newRecipe.Category" class="form-control" />
     </div>
 
-    <div>
+    <div class="form-group">
         <label for="prepTime">Preparation Time (minutes): </label>
-        <InputNumber id="prepTime" @bind-Value="newRecipe.PreparationTime" />
+        <InputNumber id="prepTime" @bind-Value="newRecipe.PreparationTime" class="form-control" />
     </div>
 
-    <div>
+    <div class="form-group">
         <label for="cookTime">Cooking Time (minutes): </label>
-        <InputNumber id="cookTime" @bind-Value="newRecipe.CookingTime" />
+        <InputNumber id="cookTime" @bind-Value="newRecipe.CookingTime" class="form-control" />
     </div>
 
-    <div>
+    <div class="form-group">
         <label for="servingSize">Serving Size: </label>
-        <InputNumber id="servingSize" @bind-Value="newRecipe.ServingSize" />
+        <InputNumber id="servingSize" @bind-Value="newRecipe.ServingSize" class="form-control" />
     </div>
 
-    <button type="submit">Add Recipe</button>
+    <button type="submit" class="btn btn-primary">Add Recipe</button>
 </EditForm>
 
 @code {

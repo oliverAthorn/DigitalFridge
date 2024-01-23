@@ -18,9 +18,9 @@ public class RecipeRepository : IRecipeRepository
     public async Task<int> AddRecipe(Recipe recipe)
     {
         var sql = @"
-INSERT INTO Recipes (Title, Description, Category, PreparationTime, CookingTime, ServingSize)
-VALUES (@Title, @Description, @Category, @PreparationTime, @CookingTime, @ServingSize);
-SELECT CAST(SCOPE_IDENTITY() as int);";
+            INSERT INTO Recipes (Title, Description, Category, PreparationTime, CookingTime, ServingSize)
+            VALUES (@Title, @Description, @Category, @PreparationTime, @CookingTime, @ServingSize);
+            SELECT CAST(SCOPE_IDENTITY() as int);";
 
         using (var dbConnection = Connection)
         {

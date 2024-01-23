@@ -1,8 +1,5 @@
 using DigitalFridge.Repository;
 using DigitalFridge.Service;
-using DigitalFridge.Web.Data;
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +8,6 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddSingleton<WeatherForecastService>();
 
 builder.Services.AddScoped<IRecipeRepository>(s => new RecipeRepository(connectionString));
 builder.Services.AddScoped<IRecipeService, RecipeService>();
