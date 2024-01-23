@@ -1,11 +1,12 @@
-﻿using DigitalFridge.Repository.Models;
+﻿using DigitalFridge.Repository;
+using DigitalFridge.Repository.Models;
 
 namespace DigitalFridge.Service;
 public class RecipeService : IRecipeService
 {
-    private readonly RecipeRepository _recipeRepository;
+    private readonly IRecipeRepository _recipeRepository;
 
-    public RecipeService(RecipeRepository recipeRepository)
+    public RecipeService(IRecipeRepository recipeRepository)
     {
         _recipeRepository = recipeRepository;
     }

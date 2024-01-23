@@ -1,0 +1,55 @@
+﻿@page "/add-recipe"
+@using DigitalFridge.Repository.Models
+@using DigitalFridge.Service
+@inject IRecipeService RecipeService
+
+<PageTitle>Add Recipe</PageTitle>
+
+<h3>Add New Recipe</h3>
+
+<EditForm Model="@newRecipe" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div>
+        <label for="title">Title: </label>
+        <InputText id="title" @bind-Value="newRecipe.Title" />
+    </div>
+
+    <div>
+        <label for="description">Description: </label>
+        <InputTextArea id="description" @bind-Value="newRecipe.Description" />
+    </div>
+
+    <div>
+        <label for="category">Category: </label>
+        <InputText id="category" @bind-Value="newRecipe.Category" />
+    </div>
+
+    <div>
+        <label for="prepTime">Preparation Time (minutes): </label>
+        <InputNumber id="prepTime" @bind-Value="newRecipe.PreparationTime" />
+    </div>
+
+    <div>
+        <label for="cookTime">Cooking Time (minutes): </label>
+        <InputNumber id="cookTime" @bind-Value="newRecipe.CookingTime" />
+    </div>
+
+    <div>
+        <label for="servingSize">Serving Size: </label>
+        <InputNumber id="servingSize" @bind-Value="newRecipe.ServingSize" />
+    </div>
+
+    <button type="submit">Add Recipe</button>
+</EditForm>
+
+@code {
+    private Recipe newRecipe = new Recipe();
+
+    private async Task HandleValidSubmit()
+    {
+        int recipeId = await RecipeService.AddRecipeAsync(newRecipe);
+        // Handle post-submission logic (e.g., redirecting, displaying a success message, etc.)
+    }
+}

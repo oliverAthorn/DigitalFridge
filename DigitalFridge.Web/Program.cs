@@ -15,6 +15,7 @@ builder.Services.AddSingleton<WeatherForecastService>();
 
 builder.Services.AddScoped<IRecipeRepository>(s => new RecipeRepository(connectionString));
 builder.Services.AddScoped<IRecipeService, RecipeService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
