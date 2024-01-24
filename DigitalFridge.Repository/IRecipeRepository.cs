@@ -4,5 +4,5 @@ namespace DigitalFridge.Repository;
 
 public interface IRecipeRepository
 {
-    Task<int> AddRecipe(Recipe recipe);
+    Task<int> AddRecipeAsync(Recipe recipe);
 }

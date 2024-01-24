@@ -11,7 +11,7 @@ public class RecipeRepository : IRecipeRepository
         _connectionProvider = connectionProvider ?? throw new ArgumentNullException(nameof(connectionProvider));
     }
 
-    public async Task<int> AddRecipe(Recipe recipe)
+    public async Task<int> AddRecipeAsync(Recipe recipe)
     {
         using var connection = _connectionProvider.GetConnection();
 
@@ -21,6 +21,7 @@ public class RecipeRepository : IRecipeRepository
             VALUES (@Title, @Description, @Category, @PreparationTime, @CookingTime, @ServingSize);
             SELECT CAST(SCOPE_IDENTITY() as int);",
             recipe);
+
         return result;
     }
 }
