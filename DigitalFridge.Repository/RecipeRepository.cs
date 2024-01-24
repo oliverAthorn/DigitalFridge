@@ -1,32 +1,26 @@
-﻿using System.Data;
-using System.Data.SqlClient;
-using Dapper;
+﻿using Dapper;
 using DigitalFridge.Repository;
 using DigitalFridge.Repository.Models;
 
 public class RecipeRepository : IRecipeRepository
 {
-    private readonly string _connectionString;
+    private IConnectionProvider _connectionProvider;
 
-    public RecipeRepository(string connectionString)
+    public RecipeRepository(IConnectionProvider connectionProvider)
     {
-        _connectionString = connectionString;
+        _connectionProvider = connectionProvider ?? throw new ArgumentNullException(nameof(connectionProvider));
     }
-
-    private IDbConnection Connection => new SqlConnection(_connectionString);
 
     public async Task<int> AddRecipe(Recipe recipe)
     {
-        var sql = @"
+        using var connection = _connectionProvider.GetConnection();
+
+        var result = await connection.ExecuteAsync(
+            @"
             INSERT INTO Recipes (Title, Description, Category, PreparationTime, CookingTime, ServingSize)
             VALUES (@Title, @Description, @Category, @PreparationTime, @CookingTime, @ServingSize);
-            SELECT CAST(SCOPE_IDENTITY() as int);";
-
-        using (var dbConnection = Connection)
-        {
-            dbConnection.Open();
-            var insertedId = await dbConnection.ExecuteScalarAsync<int>(sql, recipe);
-            return insertedId;
-        }
+            SELECT CAST(SCOPE_IDENTITY() as int);",
+            recipe);
+        return result;
     }
 }
